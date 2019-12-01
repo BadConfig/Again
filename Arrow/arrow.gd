@@ -12,7 +12,7 @@ var options = {}
 
 
 func _ready():
-	options = get_parent().hero_options['arrow_options']
+	options = get_parent().get_arrow_options()
 	get_node("Sprite").set_texture(options['arrow_texture'])
 	
 var move_vector = Vector2()

@@ -15,28 +15,45 @@ var left_key = 'ui_left'
 var right_key = 'ui_right'
 var human_dir = "down"
 
+#var options = get_parent().get_human_options()
+#=========================move=functions=======================
+func go_up():
+	pass
+func go_down():
+	pass
+func go_left():
+	pass
+func go_right():
+	pass
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$attack_reload.wait_time = get_parent().hero_options['speed']/10
 	pass # Replace with function body.
 #=========================walking==============================
 var move_vector = Vector2()
+var enable_shoot = true
 func shoot_action():
-	if Input.is_action_just_pressed("ui_focus_next"):
-		var arrow = arrow_scene.instance()
-		get_parent().add_child(arrow)
-		if human_dir == 'up':
-			arrow.direction_y = -1
-			arrow.position = $Vertical_arrow_position.global_position
-		elif human_dir == 'down':
-			arrow.direction_y = 1
-			arrow.position = $Vertical_arrow_position.global_position
-		elif human_dir == 'left':
-			arrow.direction_x = -1
-			arrow.position = $Horizontal_arrow_position.global_position
-		elif human_dir == 'right':
-			arrow.direction_x = 1
-			arrow.position = $Horizontal_arrow_position.global_position
-		
+	if $attack_reload.time_left == 0:
+		enable_shoot = true
+	if enable_shoot:
+		if Input.is_action_pressed("ui_focus_next"):
+			var arrow = arrow_scene.instance()
+			get_parent().add_child(arrow)
+			if human_dir == 'up':
+				arrow.direction_y = -1
+				arrow.position = $Vertical_arrow_position.global_position
+			elif human_dir == 'down':
+				arrow.direction_y = 1
+				arrow.position = $Vertical_arrow_position.global_position
+			elif human_dir == 'left':
+				arrow.direction_x = -1
+				arrow.position = $Horizontal_arrow_position.global_position
+			elif human_dir == 'right':
+				arrow.direction_x = 1
+				arrow.position = $Horizontal_arrow_position.global_position
+			enable_shoot = false
+			$attack_reload.start()
+	
 
 func walk_action(delta):
 	if Input.is_action_pressed(up_key):

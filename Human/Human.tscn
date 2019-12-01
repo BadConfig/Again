@@ -23,3 +23,6 @@ position = Vector2( 50.8921, 19.6701 )
 
 [node name="Vertical_arrow_position" type="Position2D" parent="."]
 position = Vector2( 0, -65.4205 )
+
+[node name="attack_reload" type="Timer" parent="."]
+one_shot = true
