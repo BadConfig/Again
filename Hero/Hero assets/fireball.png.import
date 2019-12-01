@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/human.png-aacc5f282147aa058be9a5b4118b6f55.stex"
+path="res://.import/fireball.png-a05ba9b8b5b70576bd82d5102f202771.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hero assets/human.png"
-dest_files=[ "res://.import/human.png-aacc5f282147aa058be9a5b4118b6f55.stex" ]
+source_file="res://Hero/Hero assets/fireball.png"
+dest_files=[ "res://.import/fireball.png-a05ba9b8b5b70576bd82d5102f202771.stex" ]
 
 [params]
 
