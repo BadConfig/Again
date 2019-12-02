@@ -22,10 +22,18 @@ var hero_options = {
 		'go_right':KEY_D,
 		'activate':KEY_F,
 		'attack':KEY_SPACE,
+		'spell1':KEY_1,
+		'spell2':KEY_2,
+		'spell3':KEY_3,
+		'spell4':KEY_4,
+		'spell5':KEY_5,
+		'spell6':KEY_6,
 		},
 	'human_class': 'mage',
 	'hero_inventory': [],
-	'hero_spells': [],
+	'hero_spells': [
+		preload("res://Spells/Fire Blast/FireBlast.tscn")
+		],
 	}
 	
 	
@@ -43,6 +51,8 @@ func _input(event):
 			$"Human".go_right()
 		if event.scancode == hero_options['control_options']['attack']:
 			$"Human".go_attack()
+		if event.scancode == hero_options['control_options']['spell1']:
+			$"Human".go_spell(hero_options['hero_spells'][0])
 			
 			
 #==========================may=be=deleted=========================================

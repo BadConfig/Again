@@ -49,6 +49,9 @@ func go_right():
 	move_vector.x = 0
 func go_stay():	
 	pass
+func go_spell(spell_scene):
+	var spell = spell_scene.instance()
+	get_parent().add_child(spell)
 #========================attacking==============================
 var enable_shoot = true
 
