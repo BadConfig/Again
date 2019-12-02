@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Human/Human.gd" type="Script" id=1]
 [ext_resource path="res://Hero/Hero assets/human.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 23.0144, 13.6194 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25.4332, 40.5827 )
 
 [node name="Human" type="KinematicBody2D"]
 collision_layer = 0
@@ -18,11 +21,22 @@ shape = SubResource( 1 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 
-[node name="Horizontal_arrow_position" type="Position2D" parent="."]
-position = Vector2( 50.8921, 19.6701 )
-
-[node name="Vertical_arrow_position" type="Position2D" parent="."]
-position = Vector2( 0.0740814, -53.1601 )
-
 [node name="attack_reload" type="Timer" parent="."]
 one_shot = true
+
+[node name="Human_area" type="Area2D" parent="."]
+position = Vector2( 0.568787, 0 )
+scale = Vector2( 1, 1.04 )
+
+[node name="hitbox" type="CollisionShape2D" parent="Human_area"]
+position = Vector2( 1.62108, -2.16144 )
+rotation = -3.14159
+scale = Vector2( 1.03667, -0.881015 )
+shape = SubResource( 2 )
+one_way_collision_margin = 0.0
+
+[node name="Vertical_arrow_position" type="Position2D" parent="."]
+position = Vector2( 0.642883, -58.2793 )
+
+[node name="Horizontal_arrow_position" type="Position2D" parent="."]
+position = Vector2( 55.4425, 19.6701 )

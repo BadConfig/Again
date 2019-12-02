@@ -1,18 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Arrow/arrow.gd" type="Script" id=1]
 [ext_resource path="res://Hero/Hero assets/fireball.png" type="Texture" id=2]
+[ext_resource path="res://Arrow/Hit_shape.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96.8637, 61.3854 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.8705, 11.4646 )
 
-[node name="arrow" type="KinematicBody2D"]
+[node name="arrow" type="KinematicBody2D" groups=[
+"Damagers",
+]]
 script = ExtResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -7.03241, 0 )
-scale = Vector2( 0.25, 0.25 )
-shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
@@ -21,4 +19,15 @@ texture = ExtResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -6.783, 7.62939e-06 )
 scale = Vector2( 9.66721, 5.97422 )
+
+[node name="Hit_area" type="Area2D" parent="."]
+position = Vector2( 1.39533, -0.967449 )
+scale = Vector2( 0.818957, 0.687163 )
+
+[node name="Hit_shape" type="CollisionShape2D" parent="Hit_area"]
+position = Vector2( -6.73283, 0.0873342 )
+scale = Vector2( 2.31926, 1.53281 )
+shape = SubResource( 2 )
+script = ExtResource( 3 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="Hit_area" to="Hit_area/Hit_shape" method="_on_Hit_area_area_entered"]
