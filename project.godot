@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Again"
-run/main_scene="res://Main Menu.tscn"
+run/main_scene="res://Hero/Hero.tscn"
 config/icon="res://icon.png"
 
 [rendering]
