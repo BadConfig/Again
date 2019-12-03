@@ -8,6 +8,7 @@
 radius = 100.351
 
 [node name="FireBlast" type="KinematicBody2D"]
+position = Vector2( 0, 3.34036 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
