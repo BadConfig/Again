@@ -44,9 +44,8 @@ var hero_options = {
 			'cooldown' 	: 3,
 			},
 			{
-			'scene'		: preload('res://Spells/Fire Blast/FireBlast.tscn'),
-			'texture'	: preload('res://Spells/Fire Blast/Assets/f59eaa826d4e49f.png'),
-			'speed'		: 500,
+			'scene'		: preload('res://Spells/Fireball/Fireball.tscn'),
+			'speed'		: 800,
 			'cooldown' 	: 3,
 			},
 			{
