@@ -24,6 +24,24 @@ texture = ExtResource( 2 )
 [node name="attack_reload" type="Timer" parent="."]
 one_shot = true
 
+[node name="spell1_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell2_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell3_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell4_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell5_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell6_reload" type="Timer" parent="."]
+one_shot = true
+
 [node name="Human_area" type="Area2D" parent="."]
 position = Vector2( 0.568787, 0 )
 scale = Vector2( 1, 1.04 )
