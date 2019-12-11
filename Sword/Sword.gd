@@ -3,10 +3,11 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var options = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var t = get_parent().get_node('Human').get_direction_options(0)
+	options = get_parent().options['attack']
+	var t = get_parent().get_direction_options(0)
 	global_position = t['global_position']
 	$Timer.wait_time = 1;
 	$Timer.start()

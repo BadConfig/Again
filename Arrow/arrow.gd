@@ -9,9 +9,9 @@ extends KinematicBody2D
 var move_vector = Vector2()
 var options = {}
 func _ready():
-	options = get_parent().get_arrow_options()
-	get_node("Sprite").set_texture(options['arrow_texture'])
-	var t = get_parent().get_node("Human").get_direction_options(options['arrow_speed'])
+	options = get_parent().options['attack']
+	get_node("Sprite").set_texture(options['texture'])
+	var t = get_parent().get_direction_options(options['speed'])
 	move_vector = t['vector']
 	global_position = t['global_position']
 	

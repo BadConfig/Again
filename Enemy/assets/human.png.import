@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/human.png-e5af2535f176de8f4444ab46e8fddd9a.stex"
+path="res://.import/human.png-30b35a7756257f015740e7a2ce506f00.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hero/Hero assets/human.png"
-dest_files=[ "res://.import/human.png-e5af2535f176de8f4444ab46e8fddd9a.stex" ]
+source_file="res://Enemy/assets/human.png"
+dest_files=[ "res://.import/human.png-30b35a7756257f015740e7a2ce506f00.stex" ]
 
 [params]
 

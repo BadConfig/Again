@@ -1,6 +1,55 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://TemplateScripts/Human.gd" type="Script" id=1]
+[ext_resource path="res://Hero/assets/human.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/Area2D.gd" type="Script" id=3]
 
-[node name="Enemy" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41.2224, 58.2523 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 38.282, 20.7626 )
+
+[node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 8, 8 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 3.67545, -3.67545 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 5.88074, 33.8142 )
+shape = SubResource( 2 )
+
+[node name="attack_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell1_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell2_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell3_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell4_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell5_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="spell6_reload" type="Timer" parent="."]
+one_shot = true
+
+[node name="Vertical_arrow_position" type="Position2D" parent="."]
+
+[node name="Horizontal_arrow_position" type="Position2D" parent="."]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
