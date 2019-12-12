@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-var fireball_options = {
+var options = {
 	'speed'		: 800,
 	'cooldown' 	: 3,
+	'type'		: 'spell',
 	}
 
 func _on_VisibilityNotifier2D_screen_exited():
@@ -10,7 +11,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 var move_vector = Vector2()
 func _ready():
-	var t = get_parent().get_node('Human').get_direction_options(fireball_options['speed'])
+	var t = get_parent().get_direction_options(options['speed'])
 	move_vector = t['vector']
 	global_position = t['global_position']
 func _process(delta):
