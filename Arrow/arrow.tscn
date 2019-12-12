@@ -21,11 +21,11 @@ scale = Vector2( 9.66721, 5.97422 )
 [node name="Hit_area" type="Area2D" parent="."]
 position = Vector2( 1.39533, -0.967449 )
 scale = Vector2( 0.818957, 0.687163 )
-script = ExtResource( 3 )
 
 [node name="Hit_shape" type="CollisionShape2D" parent="Hit_area"]
 position = Vector2( -6.73283, 0.0873342 )
 scale = Vector2( 2.31926, 1.53281 )
 shape = SubResource( 1 )
+script = ExtResource( 3 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
-[connection signal="area_entered" from="Hit_area" to="Hit_area" method="_on_Hit_area_area_entered"]
+[connection signal="area_entered" from="Hit_area" to="Hit_area/Hit_shape" method="_on_Hit_area_area_entered"]

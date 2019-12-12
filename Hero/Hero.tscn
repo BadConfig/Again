@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TemplateScripts/Human.gd" type="Script" id=1]
 [ext_resource path="res://Hero/assets/human.png" type="Texture" id=2]
-[ext_resource path="res://Hero/Area2D.gd" type="Script" id=3]
-[ext_resource path="res://Hero/HeroControler.gd" type="Script" id=4]
+[ext_resource path="res://Hero/HeroControler.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 41.2224, 58.2523 )
@@ -19,7 +18,6 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 3 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 3.67545, -3.67545 )
@@ -58,5 +56,4 @@ position = Vector2( 0, -102.178 )
 position = Vector2( 91.1516, 0 )
 
 [node name="HeroControler" type="Node2D" parent="."]
-script = ExtResource( 4 )
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
+script = ExtResource( 3 )
