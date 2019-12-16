@@ -15,4 +15,6 @@ func _ready():
 	move_vector = t['vector']
 	global_position = t['global_position']
 func _process(delta):
-	move_and_slide(move_vector)
+	move_and_slide(move_vector)	
+
+
